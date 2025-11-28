@@ -59,61 +59,61 @@
             </tr>
         </table> 
         
- <script>
+        <script>
+    // Crear cliente de Supabase
     const SUPABASE_URL = "https://qhktptxhesblipafrojq.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoa3RwdHhoZXNibGlwYWZyb2pxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQzMjc4NjksImV4cCI6MjA3OTkwMzg2OX0.8HsuDeeFMW-hyDcKcx8E4O5aZdVlgeG84q2goSt3tZos";
 
     const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    // Función para cargar todos los datos desde Supabase
+    // Función para cargar los datos al iniciar
     async function cargarDatos() {
-        for (let i = 0; i < 28; i++) {
-            const txt = document.getElementById("miTexto" + i);
-            const chk = document.getElementById("miCheck" + i);
+      for (let i = 0; i < 28; i++) {
+        const txt = document.getElementById("miTexto" + i);
+        const chk = document.getElementById("miCheck" + i);
+        if (!txt || !chk) continue;
 
-            if (!txt || !chk) continue;
+        const { data } = await supabaseClient
+          .from("lista_completa")  // tabla con texto y checkbox
+          .select("*")
+          .eq("id", i)
+          .single()
+          .catch(() => ({ data: null }));
 
-            // Cargar texto
-            const { data: textData } = await supabaseClient
-                .from("lista")
-                .select("texto")
-                .eq("id", i)
-                .single()
-                .catch(() => ({ data: null }));
-            if (textData) txt.value = textData.texto;
-
-            // Cargar checkbox
-            const { data: checkData } = await supabaseClient
-                .from("checks")
-                .select("checked")
-                .eq("id", i)
-                .single()
-                .catch(() => ({ data: null }));
-            if (checkData) chk.checked = checkData.checked;
-
-            // Guardar cambios automáticamente
-            txt.addEventListener("input", () => {
-                supabaseClient.from("lista").upsert({ id: i, texto: txt.value }).catch(console.error);
-            });
-
-            chk.addEventListener("change", () => {
-                supabaseClient.from("checks").upsert({ id: i, checked: chk.checked }).catch(console.error);
-            });
+        if (data) {
+          txt.value = data.texto;
+          chk.checked = data.checked;
         }
+
+        txt.addEventListener("input", () => {
+          supabaseClient
+            .from("lista_completa")
+            .update({ texto: txt.value })
+            .eq("id", i)
+            .catch(console.error);
+        });
+
+        chk.addEventListener("change", () => {
+          supabaseClient
+            .from("lista_completa")
+            .update({ checked: chk.checked })
+            .eq("id", i)
+            .catch(console.error);
+        });
+      }
     }
 
-    cargarDatos();
-    </script>
-
-    <style>
-    input[type="checkbox"] {
-        width: 40px;
-        height: 40px;
-        accent-color: #0f8b85;
-        appearance: auto;
-    }
-    </style>
-    
+    cargarDatos(); 
+        </script>
+        <style>
+        input[type="checkbox"] {
+            width: 40px;
+            height: 40px;
+            accent-color: #0f8b85;
+            appearance: auto;
+        }
+        </style>
+        
     </body>
 </html>
 
