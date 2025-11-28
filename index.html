@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Lista de Fernando</title>
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+         <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     </head>
     <body style="background-color: rgb(225, 255, 186);">
         <h2  align="center" style="font-size: 70;" style="font-family: Georgia, 'Times New Roman', Times, serif;">Lista de Fernando</h2>
@@ -59,22 +59,20 @@
             </tr>
         </table> 
         
-        <script>
-    // Crear cliente de Supabase
+ <script>
     const SUPABASE_URL = "https://qhktptxhesblipafrojq.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoa3RwdHhoZXNibGlwYWZyb2pxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQzMjc4NjksImV4cCI6MjA3OTkwMzg2OX0.8HsuDeeFMW-hyDcKcx8E4O5aZdVlgeG84q2goSt3tZos";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoa3RwdHhoZXNibGlwYWZyb2pxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQzMjc4NjksImV4cCI6MjA3OTkwMzg2OX0.8HsuDeeFMW-hyDcKcx8E4O5aZdVlgeG84q2goSt3tZos"; // reemplaza con tu key
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-    // Función para cargar los datos al iniciar
     async function cargarDatos() {
       for (let i = 0; i < 28; i++) {
         const txt = document.getElementById("miTexto" + i);
         const chk = document.getElementById("miCheck" + i);
         if (!txt || !chk) continue;
 
-        const { data } = await supabaseClient
-          .from("lista_completa")  // tabla con texto y checkbox
+        // Cargar datos desde Supabase
+        const { data } = await supabase
+          .from("lista_completa")
           .select("*")
           .eq("id", i)
           .single()
@@ -85,17 +83,16 @@
           chk.checked = data.checked;
         }
 
+        // Guardar cambios al escribir o marcar
         txt.addEventListener("input", () => {
-          supabaseClient
-            .from("lista_completa")
+          supabase.from("lista_completa")
             .update({ texto: txt.value })
             .eq("id", i)
             .catch(console.error);
         });
 
         chk.addEventListener("change", () => {
-          supabaseClient
-            .from("lista_completa")
+          supabase.from("lista_completa")
             .update({ checked: chk.checked })
             .eq("id", i)
             .catch(console.error);
@@ -103,8 +100,10 @@
       }
     }
 
-    cargarDatos(); 
-        </script>
+    cargarDatos();
+    // Actualizar cada 2 segundos para ver cambios de otros
+    setInterval(cargarDatos, 2000);
+  </script>
         <style>
         input[type="checkbox"] {
             width: 40px;
