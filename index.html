@@ -92,6 +92,31 @@
         }
         
         </script>
+
+        <script>
+
+        const SUPABASE_URL = "https://qhktptxhesblipafrojq.supabase.co";
+        const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoa3RwdHhoZXNibGlwYWZyb2pxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQzMjc4NjksImV4cCI6MjA3OTkwMzg2OX0.8HsuDeeFMW-hyDcKcx8E4O5aZdVlgeG84q2goSt3tZos";
+
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const listaEl = document.getElementById("lista");
+
+        
+        async function cargar() {
+        const { data } = await supabase
+            .from("lista")
+            .select("*")
+            .order("id", { ascending: false });
+
+        listaEl.innerHTML = "";
+        data.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = item.texto;
+            listaEl.appendChild(li);
+        });
+        }
+        </script>
+
         <style>
         input[type="checkbox"] {
         width: 40px;
@@ -103,4 +128,5 @@
 
     </body>
 </html>
+
 
