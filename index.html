@@ -15,6 +15,7 @@
 <tr>
 
 <td>
+<!-- Primera columna -->
 <input type="text" style="font-size:40px;" id="miTexto0"> <input type="checkbox" id="miCheck0"><br><br>
 <input type="text" style="font-size:40px;" id="miTexto1"> <input type="checkbox" id="miCheck1"><br><br>
 <input type="text" style="font-size:40px;" id="miTexto2"> <input type="checkbox" id="miCheck2"><br><br>
@@ -32,6 +33,7 @@
 </td>
 
 <td>
+<!-- Segunda columna -->
 <input type="text" style="font-size:40px;" id="miTexto14"> <input type="checkbox" id="miCheck14"><br><br>
 <input type="text" style="font-size:40px;" id="miTexto15"> <input type="checkbox" id="miCheck15"><br><br>
 <input type="text" style="font-size:40px;" id="miTexto16"> <input type="checkbox" id="miCheck16"><br><br>
@@ -53,7 +55,7 @@
 
 <script>
 const SUPABASE_URL = "https://qhktptxhesblipafrojq.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoa3RwdHhoZXNibGlwYWZyb2pxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQzMjc4NjksImV4cCI6MjA3OTkwMzg2OX0.8HsuDeeFMW-hyDcKcx8E4O5aZdVlgeG84q2goSt3tZo";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoa3RwdHhoZXNibGlwYWZyb2pxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQzMjc4NjksImV4cCI6MjA3OTkwMzg2OX0.8HsuDeeFMW-hyDcKcx8E4O5aZdVlgeG84q2goSt3tZo"; // <- reemplaza con tu ANON KEY
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 async function cargarDatos() {
@@ -85,6 +87,7 @@ async function cargarDatos() {
 
 cargarDatos();
 
+// Realtime: todos ven los cambios al instante
 sb.channel("lista-realtime")
   .on(
     "postgres_changes",
