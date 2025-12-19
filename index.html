@@ -1,119 +1,115 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Lista de Fernando</title>
-         <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    </head>
-    <body style="background-color: rgb(225, 255, 186);">
-        <h2  align="center" style="font-size: 70;" style="font-family: Georgia, 'Times New Roman', Times, serif;">Lista de Fernando</h2>
-        
-        <table align="center">
-            <tr>
-            <td><input type="text" style="font-size: 40;" id="miTexto0" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck0"><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto1" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck1" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto2" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck2" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto3" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck3" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto4" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck4" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto5" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck5" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto6" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck6" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto7" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck7" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto8" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck8" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto9" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck9" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto10" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck10" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto11" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck11" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto12" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck12" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto13" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck13" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto7" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck7" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto8" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck8" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto9" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck9" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto10" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck10" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto11" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck11" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto12" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck12" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto13" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck13" ><br><br></td>
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Fernando</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
 
+<body style="background-color: rgb(225, 255, 186);">
 
+<h2 align="center" style="font-size:70px; font-family: Georgia, 'Times New Roman', Times, serif;">
+    Lista de Fernando
+</h2>
 
-            <td><input type="text" style="font-size: 40;" id="miTexto14" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck14" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto15" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck15" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto16" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck16" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto17" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck17" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto18" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck18" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto19" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck19" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto20" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck20" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto21" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck21" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto22" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck22" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto23" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck23" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto24" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck24" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto25" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck25" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto26" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck26" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto27" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck27" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto7" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck7" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto8" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck8" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto9" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck9" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto10" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck10" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto11" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck11" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto12" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck12" ><br><br>
-            <input type="text" style="font-size: 40;" id="miTexto13" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck13" ><br><br></td>
+<table align="center">
+<tr>
 
-        
-        
-            </tr>
-        </table> 
-        
- <script>
-    const SUPABASE_URL = "https://qhktptxhesblipafrojq.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoa3RwdHhoZXNibGlwYWZyb2pxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQzMjc4NjksImV4cCI6MjA3OTkwMzg2OX0.8HsuDeeFMW-hyDcKcx8E4O5aZdVlgeG84q2goSt3tZos"; // reemplaza con tu key
-    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+<td>
+<input type="text" style="font-size:40px;" id="miTexto0"> <input type="checkbox" id="miCheck0"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto1"> <input type="checkbox" id="miCheck1"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto2"> <input type="checkbox" id="miCheck2"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto3"> <input type="checkbox" id="miCheck3"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto4"> <input type="checkbox" id="miCheck4"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto5"> <input type="checkbox" id="miCheck5"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto6"> <input type="checkbox" id="miCheck6"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto7"> <input type="checkbox" id="miCheck7"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto8"> <input type="checkbox" id="miCheck8"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto9"> <input type="checkbox" id="miCheck9"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto10"> <input type="checkbox" id="miCheck10"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto11"> <input type="checkbox" id="miCheck11"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto12"> <input type="checkbox" id="miCheck12"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto13"> <input type="checkbox" id="miCheck13"><br><br>
+</td>
 
-    async function cargarDatos() {
-      for (let i = 0; i < 28; i++) {
-        const txt = document.getElementById("miTexto" + i);
-        const chk = document.getElementById("miCheck" + i);
-        if (!txt || !chk) continue;
+<td>
+<input type="text" style="font-size:40px;" id="miTexto14"> <input type="checkbox" id="miCheck14"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto15"> <input type="checkbox" id="miCheck15"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto16"> <input type="checkbox" id="miCheck16"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto17"> <input type="checkbox" id="miCheck17"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto18"> <input type="checkbox" id="miCheck18"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto19"> <input type="checkbox" id="miCheck19"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto20"> <input type="checkbox" id="miCheck20"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto21"> <input type="checkbox" id="miCheck21"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto22"> <input type="checkbox" id="miCheck22"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto23"> <input type="checkbox" id="miCheck23"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto24"> <input type="checkbox" id="miCheck24"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto25"> <input type="checkbox" id="miCheck25"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto26"> <input type="checkbox" id="miCheck26"><br><br>
+<input type="text" style="font-size:40px;" id="miTexto27"> <input type="checkbox" id="miCheck27"><br><br>
+</td>
 
-        // Cargar datos desde Supabase
-        const { data } = await supabase
-          .from("lista_completa")
-          .select("*")
-          .eq("id", i)
-          .single()
-          .catch(() => ({ data: null }));
+</tr>
+</table>
 
-        if (data) {
-          txt.value = data.texto;
-          chk.checked = data.checked;
-        }
+<script>
+const SUPABASE_URL = "https://qhktptxhesblipafrojq.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoa3RwdHhoZXNibGlwYWZyb2pxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQzMjc4NjksImV4cCI6MjA3OTkwMzg2OX0.8HsuDeeFMW-hyDcKcx8E4O5aZdVlgeG84q2goSt3tZo";
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-        // Guardar cambios al escribir o marcar
-        txt.addEventListener("input", () => {
-          supabase.from("lista_completa")
-            .update({ texto: txt.value })
-            .eq("id", i)
-            .catch(console.error);
-        });
+async function cargarDatos() {
+  const { data } = await sb
+    .from("lista_completa")
+    .select("*");
 
-        chk.addEventListener("change", () => {
-          supabase.from("lista_completa")
-            .update({ checked: chk.checked })
-            .eq("id", i)
-            .catch(console.error);
-        });
-      }
+  data.forEach(row => {
+    const txt = document.getElementById("miTexto" + row.id);
+    const chk = document.getElementById("miCheck" + row.id);
+    if (!txt || !chk) return;
+
+    txt.value = row.texto || "";
+    chk.checked = row.checked || false;
+
+    txt.oninput = () => {
+      sb.from("lista_completa")
+        .update({ texto: txt.value })
+        .eq("id", row.id);
+    };
+
+    chk.onchange = () => {
+      sb.from("lista_completa")
+        .update({ checked: chk.checked })
+        .eq("id", row.id);
+    };
+  });
+}
+
+cargarDatos();
+
+sb.channel("lista-realtime")
+  .on(
+    "postgres_changes",
+    { event: "UPDATE", schema: "public", table: "lista_completa" },
+    payload => {
+      const row = payload.new;
+      const txt = document.getElementById("miTexto" + row.id);
+      const chk = document.getElementById("miCheck" + row.id);
+      if (!txt || !chk) return;
+
+      txt.value = row.texto || "";
+      chk.checked = row.checked || false;
     }
+  )
+  .subscribe();
+</script>
 
-    cargarDatos();
-    // Actualizar cada 2 segundos para ver cambios de otros
-    setInterval(cargarDatos, 2000);
-  </script>
-        <style>
-        input[type="checkbox"] {
-            width: 40px;
-            height: 40px;
-            accent-color: #0f8b85;
-            appearance: auto;
-        }
-        </style>
-        
-    </body>
+<style>
+input[type="checkbox"] {
+    width: 40px;
+    height: 40px;
+    accent-color: #0f8b85;
+}
+</style>
+
+</body>
 </html>
-
-
